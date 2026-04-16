@@ -1,52 +1,1298 @@
-<!-- personal website template -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KhSamuel</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/8c1b5f5b5f.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="row text-center header">
-        <div class="col-sm-3 header-left header-yellow font-bold">
-            <h1 onclick="unsubscribe(); stop_button_click();location.href='../../../index.html';" class="transition">Home</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ka Hei Samuel Kwok — Portfolio</title>
+    <meta
+      name="description"
+      content="Junior Software Engineer specialising in full-stack web development, cloud infrastructure, and AI-integrated systems."
+    />
+    <meta name="author" content="Ka Hei Samuel Kwok" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ka Hei Samuel Kwok — Portfolio" />
+    <meta
+      property="og:description"
+      content="Junior Software Engineer — Full-stack, AWS, Robotics & AI"
+    />
+    <meta property="og:url" content="https://khksamuel.github.io/" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Gradient text clipping */
+      .bg-clip-text {
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .text-transparent {
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+
+      /* Backdrop blur */
+      .backdrop-blur-lg {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      /* Missing Tailwind utilities */
+      .delay-1000 {
+        animation-delay: 1000ms;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 7px;
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(120, 120, 120, 0.5);
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* Typing animation */
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      #typing-text::after {
+        content: "|";
+        color: #60a5fa;
+        margin-left: 2px;
+        animation: blink 0.8s step-end infinite;
+      }
+      #typing-text.done::after {
+        animation: blink 0.8s step-end infinite;
+      }
+
+      /* Smooth nav highlight */
+      nav a {
+        transition: color 0.2s;
+      }
+
+      /* Plus Ultra surge animation */
+      @keyframes ultra-surge {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.6));
+          transform: translateY(0);
+        }
+        40% {
+          filter: drop-shadow(0 0 14px rgba(34, 211, 238, 1))
+            drop-shadow(0 0 30px rgba(139, 92, 246, 0.9))
+            drop-shadow(0 0 50px rgba(96, 165, 250, 0.4));
+          transform: translateY(-8px);
+        }
+        58% {
+          transform: translateY(-5px);
+        }
+      }
+      .ultra-surge-svg {
+        animation: ultra-surge 2.4s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen text-white"
+  >
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-lg border-b border-white/10"
+    >
+      <div
+        class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#hero"
+          class="text-xl font-bold tracking-wider text-white hover:text-blue-400"
+          >KHK</a
+        >
+        <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+          <a href="#projects" class="hover:text-white">Projects</a>
+          <a href="#experience" class="hover:text-white">Experience</a>
+          <a href="#publications" class="hover:text-white">Recognition</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
         </div>
-        <div class="col-sm-9 header-violet font-bold">
-            <h1>Carry My Luggage</h1>
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-gray-400 hover:text-white"
+          aria-label="Toggle menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-black/90 border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm text-gray-400"
+      >
+        <a
+          href="#projects"
+          class="hover:text-white"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Projects</a
+        >
+        <a
+          href="#experience"
+          class="hover:text-white"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Experience</a
+        >
+        <a
+          href="#publications"
+          class="hover:text-white"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Recognition</a
+        >
+        <a
+          href="#contact"
+          class="hover:text-white"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <div class="w-full">
+      <section
+        id="hero"
+        class="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-purple-900/20"
+        ></div>
+        <div
+          class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"
+        ></div>
+        <div class="container mx-auto text-center relative z-10 max-w-6xl">
+          <div class="max-w-4xl mx-auto">
+            <div class="mb-8 flex justify-center">
+              <div class="relative">
+                <div
+                  class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 p-1 border-gradient-to-r from-blue-400 to-purple-400 bg-gradient-to-r from-blue-400 to-purple-400"
+                >
+                  <img
+                    src="profile.jpg"
+                    alt="Ka Hei Samuel Kwok"
+                    class="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
+            </div>
+            <h1
+              class="leading-none text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              style="line-height: 1.2"
+            >
+              Ka Hei Samuel Kwok
+            </h1>
+            <div
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-8 h-12 sm:h-16 flex items-center justify-center text-gray-300"
+            >
+              <span id="typing-text"></span>
+            </div>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            >
+              <button
+                class="inline-flex items-center justify-center gap-2 text-sm font-medium h-11 border-0 rounded-full px-8 py-3 transition-all duration-300 hover:scale-105 w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
+              >
+                View My Work
+              </button>
+            </div>
+            <div class="flex justify-center space-x-6 mb-16">
+              <a
+                href="https://github.com/khksamuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-github"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  ></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a
+              ><a
+                href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-linkedin"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle></svg></a
+              ><a
+                href="mailto:kwok.samuel.kh@gmail.com"
+                class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path
+                    d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="content-container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="left-side">
-                    <div class="left-side-content">
-                        <h1>KhSamuel</h1>
-                        <p>Web Developer</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/kh.samuel.7"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kh.samuel/"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/kh-samuel-7b4b5b1a0/"><i class="fab fa-linkedin-in"></i></a>
+      </section>
+      <section
+        id="projects"
+        class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+      >
+        <div class="container mx-auto max-w-7xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+          >
+            Featured Projects
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm transition-all duration-500 hover:scale-105 group overflow-hidden bg-white/5 backdrop-blur-lg border-white/10 hover:border-purple-400/30"
+              data-entry-index="0"
+              style="overflow-wrap: break-word"
+            >
+              <div class="p-6">
+                <h3
+                  class="text-xl font-bold mb-3 transition-colors text-white group-hover:text-purple-400"
+                >
+                  Allied AU
+                </h3>
+                <p class="text-sm mb-2 capitalize text-purple-300">
+                  <strong>Allied AU</strong>
+                </p>
+                <p class="mb-4 leading-relaxed text-gray-400">
+                  I co-designed and implemented the web application of Allied AU
+                  during a major upgrade. This healthcare platform connects
+                  specialised practitioners with their patients ensuring they
+                  receive the right care. My responsibilities included
+                  implementing the front-end, backend, CMS and their services on
+                  AWS. I also collaborated with my team to make and provide
+                  feedback on design decisions.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    PHP
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Stripe
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Laravel
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    RESTFUL API
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Vue.js
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Claude
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    AWS SES
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    AWS EC2
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    NPM
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    SQL
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    TypeScript
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    JavaScript
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    CSS
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    SCSS
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Google APIs
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    CI/CD
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    GitLab
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Bash
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    MYSQL
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <a
+                    href="https://www.alliedhealthau.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-9 rounded-md px-3 border border-purple-400 text-purple-400 hover:bg-purple-400/10 transition-colors duration-200"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-link w-4 h-4 mr-2"
+                    >
+                      <path
+                        d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                      ></path>
+                      <path
+                        d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                      ></path></svg
+                    >Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm transition-all duration-500 hover:scale-105 group overflow-hidden bg-white/5 backdrop-blur-lg border-white/10 hover:border-purple-400/30"
+              data-entry-index="1"
+              style="overflow-wrap: break-word"
+            >
+              <div class="p-6">
+                <h3
+                  class="text-xl font-bold mb-3 transition-colors text-white group-hover:text-purple-400"
+                >
+                  Robocup@Home
+                </h3>
+                <p class="text-sm mb-2 capitalize text-purple-300">
+                  <strong>IRL Crossing</strong>
+                </p>
+                <p class="mb-4 leading-relaxed text-gray-400">
+                  This project was completed during my software engineering
+                  internship at IRL Crossing. It focused on developing a suite
+                  of state-of-the-art systems for a robot designed to interact
+                  with and assist humans. The experience provided valuable
+                  insight into the integration of computer science and robotics,
+                  allowing us to explore the potential of these combined fields.
+                  Through our team's dedication and hard work, we ultimately
+                  achieved a world championship title.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    HTML
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    CSS
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    JavaScript
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Typescript
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    C++
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Python
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Linux
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Robot Operating System
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Bash
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Petri Net Plans
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    Pepper Robot
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    SQLITE
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >
+                    SQL
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <a
+                    href="https://github.com/RoboBreizh-RoboCup-Home"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-9 rounded-md px-3 border-0 transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-github w-4 h-4 mr-2"
+                    >
+                      <path
+                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                      ></path>
+                      <path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+                    >Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-7xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+          >
+            Professional Journey
+          </h2>
+          <div class="relative">
+            <!-- Timeline line starts exactly where the SVG cap ends (64px) -->
+            <div
+              class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bottom-0"
+              style="
+                top: 64px;
+                background: linear-gradient(to top, #1d4ed8, #22d3ee);
+              "
+            ></div>
+            <!-- Plus Ultra cap — stacked chevrons connected to the line -->
+            <div
+              class="absolute top-5 z-20 left-[7px] md:left-1/2 md:-translate-x-1/2"
+            >
+              <svg
+                width="20"
+                height="64"
+                viewBox="0 0 20 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ultra-surge-svg"
+                aria-label="Plus Ultra — yet more to come"
+              >
+                <defs>
+                  <linearGradient id="stem-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#22d3ee" />
+                    <stop offset="100%" stop-color="#1d4ed8" />
+                  </linearGradient>
+                </defs>
+                <!-- Connecting stem — merges visually with the main line below -->
+                <line
+                  x1="10"
+                  y1="64"
+                  x2="10"
+                  y2="52"
+                  stroke="url(#stem-grad)"
+                  stroke-width="2"
+                />
+                <!-- Chevron 1 — dimmest, bottom -->
+                <polyline
+                  points="3,52 10,43 17,52"
+                  stroke="rgba(34,211,238,0.35)"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Chevron 2 — mid -->
+                <polyline
+                  points="3,40 10,30 17,40"
+                  stroke="rgba(34,211,238,0.65)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Chevron 3 — bright -->
+                <polyline
+                  points="2,28 10,16 18,28"
+                  stroke="rgba(34,211,238,0.9)"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Tip — white-hot point -->
+                <polyline
+                  points="3,16 10,3 17,16"
+                  stroke="white"
+                  stroke-width="3.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="space-y-8 sm:space-y-12" style="padding-top: 80px">
+              <div
+                data-entry-index="0"
+                class="relative flex items-center md:flex-row"
+              >
+                <div
+                  class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 bg-gradient-to-r from-cyan-400 to-blue-600 border-gray-900"
+                ></div>
+                <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 lg:pr-12">
+                  <div
+                    class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-cyan-400/30"
+                    style="overflow-wrap: break-word"
+                  >
+                    <div class="p-6" style="overflow-wrap: break-word">
+                      <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2"
+                      >
+                        <h3 class="text-xl font-bold text-white">
+                          Junior Software Engineer
+                        </h3>
+                        <div
+                          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
+                        >
+                          2025 - Present
                         </div>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-3 text-cyan-400">
+                        Allied AU
+                      </h4>
+                      <p class="mb-4 leading-relaxed text-gray-400">
+                        Optimised API usage by 80%, implementing caching and
+                        debouncing techniques to improve system performance and
+                        cost effectiveness. Maintained AWS production and
+                        development environments, sustaining over 99% uptime.
+                        Developed bidirectional API integration features to
+                        synchronise schedules between internal systems and
+                        external scheduling platforms, ensuring accurate,
+                        real-time data exchange.
+                      </p>
+                      <div class="space-y-2 mb-4"></div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="right-side-content">
-                    <h1>KhSamuel</h1>
-                    <p>Web Developer</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/kh.samuel.7"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/kh.samuel/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/kh-samuel-7b4b5b1a0/"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <div
+                data-entry-index="1"
+                class="relative flex items-center md:flex-row-reverse"
+              >
+                <div
+                  class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 bg-gradient-to-r from-cyan-400 to-blue-600 border-gray-900"
+                ></div>
+                <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 lg:pl-12">
+                  <div
+                    class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-cyan-400/30"
+                    style="overflow-wrap: break-word"
+                  >
+                    <div class="p-6" style="overflow-wrap: break-word">
+                      <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2"
+                      >
+                        <h3 class="text-xl font-bold text-white">
+                          Programming Tutor
+                        </h3>
+                        <div
+                          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
+                        >
+                          2022 - Present
+                        </div>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-3 text-cyan-400">
+                        Self-employed
+                      </h4>
+                      <p class="mb-4 leading-relaxed text-gray-400">
+                        Tutored more than 10 university students on programming
+                        and prepared lesson schedule. Conducted weekly
+                        assignments, resulting in 50% grade improvement in half
+                        yearly exams. Developed tailor-made learning modules for
+                        students accelerated coding comprehension by breaking
+                        down complex concepts into practical applications.
+                      </p>
+                      <div class="space-y-2 mb-4"></div>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <div
+                data-entry-index="2"
+                class="relative flex items-center md:flex-row"
+              >
+                <div
+                  class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 bg-gradient-to-r from-cyan-400 to-blue-600 border-gray-900"
+                ></div>
+                <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 lg:pr-12">
+                  <div
+                    class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-cyan-400/30"
+                    style="overflow-wrap: break-word"
+                  >
+                    <div class="p-6" style="overflow-wrap: break-word">
+                      <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2"
+                      >
+                        <h3 class="text-xl font-bold text-white">
+                          UX Development Intern
+                        </h3>
+                        <div
+                          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
+                        >
+                          2025
+                        </div>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-3 text-cyan-400">
+                        Allied AU
+                      </h4>
+                      <p class="mb-4 leading-relaxed text-gray-400">
+                        Designed and deployed a SaaS service enabling secure
+                        external client access to previously functionally
+                        limited systems, improving user reach and system
+                        flexibility. Implemented UI/UX enhancements and user
+                        flow optimisation for a national allied health platform.
+                        Developed, debugged, and tested web features using
+                        Vue.js, Laravel, MySQL, AWS SES. Partnered with an agile
+                        hybrid team, including CEO, project manager, QA tester,
+                        and senior developer.
+                      </p>
+                      <div class="space-y-2 mb-4"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-entry-index="3"
+                class="relative flex items-center md:flex-row-reverse"
+              >
+                <div
+                  class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 bg-gradient-to-r from-cyan-400 to-blue-600 border-gray-900"
+                ></div>
+                <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 lg:pl-12">
+                  <div
+                    class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-cyan-400/30"
+                    style="overflow-wrap: break-word"
+                  >
+                    <div class="p-6" style="overflow-wrap: break-word">
+                      <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2"
+                      >
+                        <h3 class="text-xl font-bold text-white">
+                          Entrepreneurship &amp; Innovation Intern
+                        </h3>
+                        <div
+                          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
+                        >
+                          2024 - 2024
+                        </div>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-3 text-cyan-400">
+                        Moreton Bay Regional Council
+                      </h4>
+                      <p class="mb-4 leading-relaxed text-gray-400">
+                        Designed and implemented a data-driven website to
+                        improve accessibility and user engagement. Conducted
+                        analytical research on web traffic patterns, identifying
+                        improvements for site functionality.
+                      </p>
+                      <div class="space-y-2 mb-4"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-entry-index="4"
+                class="relative flex items-center md:flex-row"
+              >
+                <div
+                  class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 z-10 bg-gradient-to-r from-cyan-400 to-blue-600 border-gray-900"
+                ></div>
+                <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 lg:pr-12">
+                  <div
+                    class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-cyan-400/30"
+                    style="overflow-wrap: break-word"
+                  >
+                    <div class="p-6" style="overflow-wrap: break-word">
+                      <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2"
+                      >
+                        <h3 class="text-xl font-bold text-white">
+                          Software Engineer Intern
+                        </h3>
+                        <div
+                          class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
+                        >
+                          2023 - 2023
+                        </div>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-3 text-cyan-400">
+                        IRL Crossing
+                      </h4>
+                      <p class="mb-4 leading-relaxed text-gray-400">
+                        Developed web-based robot control solution enhanced
+                        human-robot interaction efficiency by 25%, optimising
+                        performance under strict hardware constraints.
+                        Collaborated with a high-calibre engineering team to
+                        refine algorithms, resulted in releasing 15% more CPU
+                        resources for other core tasks.
+                      </p>
+                      <div class="space-y-2 mb-4"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+      <section
+        id="publications"
+        class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+      >
+        <div class="container mx-auto max-w-7xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent"
+          >
+            Publications &amp; Recognition
+          </h2>
+          <div class="grid grid-cols-1 gap-8 lg:gap-12">
+            <div>
+              <div class="flex items-center mb-6 sm:mb-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-trophy w-6 h-6 sm:w-8 sm:h-8 mr-3 text-yellow-400"
+                >
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path
+                    d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                  ></path>
+                  <path
+                    d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                  ></path>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                </svg>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white">
+                  Awards &amp; Honors
+                </h3>
+              </div>
+              <div class="space-y-4 sm:space-y-6">
+                <div
+                  class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
+                  data-entry-index="0"
+                  style="overflow-wrap: break-word"
+                >
+                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
+                    <div class="flex items-start mb-3 gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold mb-2 text-white">
+                          ROBOCUP@HOME 2023 League Social Standard
+                        </h4>
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                        >
+                          <p class="font-medium text-sm text-yellow-400">
+                            Université de Bordeaux
+                          </p>
+                          <div
+                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
+                          >
+                            2023
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                      Engineered AI-driven robotics software boosted object
+                      recognition accuracy by 35%, securing first place in an
+                      international competition.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
+                  data-entry-index="1"
+                  style="overflow-wrap: break-word"
+                >
+                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
+                    <div class="flex items-start mb-3 gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold mb-2 text-white">
+                          Platform League 1st Place
+                        </h4>
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                        >
+                          <p class="font-medium text-sm text-yellow-400">
+                            Université de Bordeaux
+                          </p>
+                          <div
+                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
+                          >
+                            2023
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                      Achieved first place in the Platform League category at
+                      RoboCup@Home 2023, competing against top international
+                      university teams with an autonomous human-service robot in
+                      Bordeaux, France.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
+                  data-entry-index="2"
+                  style="overflow-wrap: break-word"
+                >
+                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
+                    <div class="flex items-start mb-3 gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold mb-2 text-white">
+                          Global IQ Connect Program
+                        </h4>
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                        >
+                          <p class="font-medium text-sm text-yellow-400">
+                            The University of Adelaide
+                          </p>
+                          <div
+                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
+                          >
+                            2022
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                      Strengthened inter-cultural collaboration with global
+                      teamwork challenges. Enhanced cross-cultural communication
+                      in a professional setting.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
+                  data-entry-index="3"
+                  style="overflow-wrap: break-word"
+                >
+                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
+                    <div class="flex items-start mb-3 gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold mb-2 text-white">
+                          CISCO Networking Skills Competition
+                        </h4>
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                        >
+                          <p class="font-medium text-sm text-yellow-400">
+                            Cisco Networking Academy, Hong Kong &amp; Macau
+                          </p>
+                          <div
+                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
+                          >
+                            2019
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                      Gained first hand insight in network architecture and
+                      cybersecurity principles. Implemented secure networking
+                      solutions, showcasing expertise in cybersecurity
+                      principles and reducing security vulnerabilities by 50%.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
+                  data-entry-index="4"
+                  style="overflow-wrap: break-word"
+                >
+                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
+                    <div class="flex items-start mb-3 gap-3">
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-lg font-semibold mb-2 text-white">
+                          Gold Award
+                        </h4>
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                        >
+                          <p class="font-medium text-sm text-yellow-400">
+                            Cisco Networking Academy, Hong Kong &amp; Macau
+                          </p>
+                          <div
+                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
+                          >
+                            2019
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                      Gained first hand insight in network architecture and
+                      cybersecurity principles. Implemented secure networking
+                      solutions, showcasing expertise in cybersecurity
+                      principles and reducing security vulnerabilities by 50%.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+      >
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center">
+            <h3
+              class="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-12 text-white"
+            >
+              Connect with me
+            </h3>
+            <div class="flex justify-center space-x-6 sm:space-x-8">
+              <a
+                href="https://github.com/khksamuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-github w-6 h-6 sm:w-7 sm:h-7 transition-colors text-gray-400 group-hover:text-blue-400"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  ></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a
+              ><a
+                href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-linkedin w-6 h-6 sm:w-7 sm:h-7 transition-colors text-gray-400 group-hover:text-blue-400"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle></svg></a
+              ><a
+                href="mailto:kwok.samuel.kh@gmail.com"
+                class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail w-6 h-6 sm:w-7 sm:h-7 transition-colors text-gray-400 group-hover:text-blue-400"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path
+                    d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+          <div
+            class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10"
+          >
+            <p class="text-sm sm:text-base text-gray-500">
+              © 2026 Ka Hei Samuel Kwok
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-</body>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+      // "View My Work" button scroll
+      document.querySelectorAll("button").forEach(function (btn) {
+        if (btn.textContent.trim() === "View My Work") {
+          btn.addEventListener("click", function () {
+            document
+              .getElementById("projects")
+              .scrollIntoView({ behavior: "smooth" });
+          });
+        }
+      });
+
+      // Smooth scroll for all anchor links (skip bare # placeholders)
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href === "#") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Typing animation
+      (function () {
+        const roles = [
+          "Junior Software Engineer",
+          "Full-Stack Developer",
+          "Cloud & AWS Engineer",
+          "Robotics & AI Engineer",
+        ];
+        const el = document.getElementById("typing-text");
+        if (!el) return;
+        let roleIdx = 0,
+          charIdx = 0,
+          deleting = false;
+        function tick() {
+          const current = roles[roleIdx];
+          if (!deleting) {
+            el.textContent = current.slice(0, ++charIdx);
+            if (charIdx === current.length) {
+              deleting = true;
+              setTimeout(tick, 2000);
+              return;
+            }
+            setTimeout(tick, 80);
+          } else {
+            el.textContent = current.slice(0, --charIdx);
+            if (charIdx === 0) {
+              deleting = false;
+              roleIdx = (roleIdx + 1) % roles.length;
+              setTimeout(tick, 400);
+              return;
+            }
+            setTimeout(tick, 40);
+          }
+        }
+        setTimeout(tick, 600);
+      })();
+
+      // Active nav link highlight on scroll
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      window.addEventListener("scroll", function () {
+        let current = "";
+        sections.forEach(function (section) {
+          if (window.scrollY >= section.offsetTop - 80) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach(function (link) {
+          link.classList.toggle(
+            "text-white",
+            link.getAttribute("href") === "#" + current,
+          );
+          link.classList.toggle(
+            "text-gray-400",
+            link.getAttribute("href") !== "#" + current,
+          );
+        });
+      });
+    </script>
+  </body>
 </html>
