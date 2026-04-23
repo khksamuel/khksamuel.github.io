@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8RXYYBY98"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-G8RXYYBY98");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ka Hei Samuel Kwok — Portfolio</title>
@@ -1674,6 +1684,8 @@
 
         // Read the live source directly from the DOM (works on file:// and http://)
         var source = document.documentElement.outerHTML;
+        // Redact analytics IDs in the visual preview only.
+        source = source.replace(/G-[A-Z0-9]+/g, "G-XXXXXXXXXX");
         pre.textContent = source;
 
         var pos = 0;
