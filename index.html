@@ -18,6 +18,16 @@
       content="Junior Software Engineer — Full-stack, AWS, Robotics & AI"
     />
     <meta property="og:url" content="https://khksamuel.github.io/" />
+    <meta
+      property="og:image"
+      content="https://khksamuel.github.io/profile.jpg"
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://khksamuel.github.io/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="profile.jpg" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -131,6 +141,27 @@
       .ultra-surge-svg {
         animation: ultra-surge 2.4s ease-in-out infinite;
       }
+      /* About section scroll-reveal */
+      .about-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .about-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .about-reveal.from-left {
+        transform: translateX(-50px);
+      }
+      .about-reveal.from-right {
+        transform: translateX(50px);
+      }
+      .about-reveal.from-left.visible,
+      .about-reveal.from-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
     </style>
   </head>
   <body
@@ -148,8 +179,10 @@
           class="text-xl font-bold tracking-wider text-white hover:text-blue-400"
           >KHK</a
         >
-        <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+        <div class="hidden md:flex items-center gap-6 text-sm text-gray-400">
+          <a href="#about" class="hover:text-white">About</a>
           <a href="#projects" class="hover:text-white">Projects</a>
+          <a href="#skills" class="hover:text-white">Skills</a>
           <a href="#experience" class="hover:text-white">Experience</a>
           <a href="#publications" class="hover:text-white">Recognition</a>
           <a href="#contact" class="hover:text-white">Contact</a>
@@ -180,38 +213,12 @@
         id="mobile-menu"
         class="hidden md:hidden bg-black/90 border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm text-gray-400"
       >
-        <a
-          href="#projects"
-          class="hover:text-white"
-          onclick="
-            document.getElementById('mobile-menu').classList.add('hidden')
-          "
-          >Projects</a
-        >
-        <a
-          href="#experience"
-          class="hover:text-white"
-          onclick="
-            document.getElementById('mobile-menu').classList.add('hidden')
-          "
-          >Experience</a
-        >
-        <a
-          href="#publications"
-          class="hover:text-white"
-          onclick="
-            document.getElementById('mobile-menu').classList.add('hidden')
-          "
-          >Recognition</a
-        >
-        <a
-          href="#contact"
-          class="hover:text-white"
-          onclick="
-            document.getElementById('mobile-menu').classList.add('hidden')
-          "
-          >Contact</a
-        >
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#publications" class="hover:text-white">Recognition</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
       </div>
     </nav>
 
@@ -240,6 +247,9 @@
                     src="profile.jpg"
                     alt="Ka Hei Samuel Kwok"
                     class="w-full h-full object-cover rounded-full"
+                    width="160"
+                    height="160"
+                    loading="eager"
                   />
                 </div>
               </div>
@@ -248,7 +258,7 @@
               class="leading-none text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
               style="line-height: 1.2"
             >
-              Ka Hei Samuel Kwok
+              Samuel Kwok
             </h1>
             <div
               class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-8 h-12 sm:h-16 flex items-center justify-center text-gray-300"
@@ -258,17 +268,26 @@
             <div
               class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
-              <button
+              <a
+                href="#projects"
                 class="inline-flex items-center justify-center gap-2 text-sm font-medium h-11 border-0 rounded-full px-8 py-3 transition-all duration-300 hover:scale-105 w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
               >
                 View My Work
-              </button>
+              </a>
+              <a
+                href="./Resume_KaHeiSamuelKwok_template.pdf"
+                download
+                class="inline-flex items-center justify-center gap-2 text-sm font-medium h-11 rounded-full px-8 py-3 transition-all duration-300 hover:scale-105 w-full sm:w-auto border border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+              >
+                Download CV
+              </a>
             </div>
             <div class="flex justify-center space-x-6 mb-16">
               <a
                 href="https://github.com/khksamuel"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -290,6 +309,7 @@
                 href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -310,6 +330,7 @@
                   <circle cx="4" cy="4" r="2"></circle></svg></a
               ><a
                 href="mailto:kwok.samuel.kh@gmail.com"
+                aria-label="Send email"
                 class="transition-colors duration-300 hover:scale-110 transform text-gray-400 hover:text-blue-400"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -330,6 +351,84 @@
               ></a>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="about" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-20 sm:mb-28 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent about-reveal"
+          >
+            About Me
+          </h2>
+
+          <!-- Block 1: text left, image right -->
+          <div class="flex flex-col md:flex-row items-center gap-10 sm:gap-16 mb-24 sm:mb-32">
+            <div class="flex-1 about-reveal from-left">
+              <p class="text-2xl sm:text-3xl font-semibold leading-snug text-white">
+                I build <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">production software</span> that solves real problems — from healthcare platforms to world-champion robotics systems.
+              </p>
+            </div>
+            <div class="flex-1 about-reveal from-right">
+              <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-video flex items-center justify-center text-gray-500 text-sm">
+                <img
+                  src="about-1.png"
+                  alt="Software engineering work"
+                  class="w-full h-full object-cover"
+                  onerror="this.parentElement.innerHTML='<span class=\'text-gray-500 text-sm px-6 text-center\'>📸 Project photo placeholder</span>'"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Block 2: image left, text right -->
+          <div class="flex flex-col md:flex-row-reverse items-center gap-10 sm:gap-16 mb-24 sm:mb-32">
+            <div class="flex-1 about-reveal from-right">
+              <p class="text-2xl sm:text-3xl font-semibold leading-snug text-white">
+                Skilled in <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">full-stack, cloud, and AI</span> — I bring a strong analytical mindset to every layer of the stack, from API design down to deployment pipelines.
+              </p>
+            </div>
+            <div class="flex-1 about-reveal from-left">
+              <!-- Live scrolling source-code preview -->
+              <div class="rounded-2xl overflow-hidden border border-white/10 bg-gray-950 aspect-video flex flex-col" style="font-size:0">
+                <!-- Fake editor title bar -->
+                <div class="flex items-center gap-1.5 px-4 py-2.5 bg-gray-900/80 border-b border-white/10 shrink-0" style="font-size:14px">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                  <span class="ml-3 font-mono text-xs text-gray-400">index.html</span>
+                  <span class="ml-auto font-mono text-xs text-gray-600">khksamuel.github.io</span>
+                </div>
+                <!-- Scrolling code viewport -->
+                <div id="about2-viewport" class="relative overflow-hidden flex-1" style="min-width:0">
+                  <pre id="about2-code" class="font-mono leading-relaxed p-4 text-cyan-400/70 whitespace-pre-wrap break-all m-0" style="font-size:10px"></pre>
+                  <!-- Bottom fade -->
+                  <div class="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-950 to-transparent"></div>
+                  <!-- Top fade -->
+                  <div class="pointer-events-none absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-gray-950 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Block 3: text left, image right -->
+          <div class="flex flex-col md:flex-row items-center gap-10 sm:gap-16">
+            <div class="flex-1 about-reveal from-left">
+              <p class="text-2xl sm:text-3xl font-semibold leading-snug text-white">
+                I collaborate across engineering, product, and operations teams to deliver <span class="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">scalable, user-focused outcomes</span> — and I love roles that blend software fundamentals with applied AI.
+              </p>
+            </div>
+            <div class="flex-1 about-reveal from-right">
+              <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-video flex items-center justify-center text-gray-500 text-sm">
+                <img
+                  src="about-3.png"
+                  alt="Team collaboration"
+                  class="w-full h-full object-cover"
+                  onerror="this.parentElement.innerHTML='<span class=\'text-gray-500 text-sm px-6 text-center\'>📸 Team / collaboration photo placeholder</span>'"
+                />
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
       <section
@@ -354,9 +453,6 @@
                 >
                   Allied AU
                 </h3>
-                <p class="text-sm mb-2 capitalize text-purple-300">
-                  <strong>Allied AU</strong>
-                </p>
                 <p class="mb-4 leading-relaxed text-gray-400">
                   I co-designed and implemented the web application of Allied AU
                   during a major upgrade. This healthcare platform connects
@@ -615,6 +711,213 @@
           </div>
         </div>
       </section>
+      <section
+        id="skills"
+        class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/20"
+      >
+        <div class="container mx-auto max-w-7xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+          >
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-blue-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-blue-400"
+              >
+                Frontend
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >Vue.js</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >React</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >TypeScript</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >JavaScript</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >HTML</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >CSS</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-blue-500/20 text-blue-300 border-blue-500/30"
+                  >SCSS</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-purple-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-purple-400"
+              >
+                Backend
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >Laravel</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >PHP</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >Node.js</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-purple-500/20 text-purple-300 border-purple-500/30"
+                  >RESTful API</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-cyan-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-cyan-400"
+              >
+                Cloud &amp; DevOps
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >AWS EC2</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >AWS SES</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >AWS S3</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >Docker</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >CI/CD</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                  >Git</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-green-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-green-400"
+              >
+                Languages
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-500/20 text-green-300 border-green-500/30"
+                  >Python</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-500/20 text-green-300 border-green-500/30"
+                  >C++</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-500/20 text-green-300 border-green-500/30"
+                  >SQL</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-500/20 text-green-300 border-green-500/30"
+                  >Bash</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-amber-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-amber-400"
+              >
+                Databases
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >MySQL</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >MongoDB</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >SQL Server</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >SQLite</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-300 border-amber-500/30"
+                  >NoSQL</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 p-6 hover:border-pink-400/30 transition-colors duration-300"
+            >
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider mb-4 text-pink-400"
+              >
+                Tools &amp; Other
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-pink-500/20 text-pink-300 border-pink-500/30"
+                  >ROS</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-pink-500/20 text-pink-300 border-pink-500/30"
+                  >Linux</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-pink-500/20 text-pink-300 border-pink-500/30"
+                  >Agile/Scrum</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-pink-500/20 text-pink-300 border-pink-500/30"
+                  >Unit Testing</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-pink-500/20 text-pink-300 border-pink-500/30"
+                  >CI/CD</span
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="experience" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto max-w-7xl">
           <h2
@@ -844,7 +1147,7 @@
                         <div
                           class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
                         >
-                          2024 - 2024
+                          2024
                         </div>
                       </div>
                       <h4 class="text-lg font-semibold mb-3 text-cyan-400">
@@ -883,7 +1186,7 @@
                         <div
                           class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-cyan-400 text-cyan-400"
                         >
-                          2023 - 2023
+                          2023
                         </div>
                       </div>
                       <h4 class="text-lg font-semibold mb-3 text-cyan-400">
@@ -901,6 +1204,105 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="education" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-7xl">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent"
+          >
+            Education
+          </h2>
+          <div class="space-y-6">
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-violet-400/30"
+              style="overflow-wrap: break-word"
+            >
+              <div class="p-6">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Master of Artificial Intelligence
+                    </h3>
+                    <h4 class="text-lg font-semibold mt-1 text-violet-400">
+                      University of Adelaide
+                    </h4>
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold w-fit border-violet-400 text-violet-400"
+                  >
+                    2025
+                  </div>
+                </div>
+                <p class="leading-relaxed text-gray-400">
+                  Formulated and led a self-initiated research project creating
+                  a framework for evaluating and developing AI curriculum for
+                  early education, translating complex concepts into engaging,
+                  accessible learning modules.
+                </p>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-violet-400/30"
+              style="overflow-wrap: break-word"
+            >
+              <div class="p-6">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Bachelor of Computer Science (Honours)
+                    </h3>
+                    <h4 class="text-lg font-semibold mt-1 text-violet-400">
+                      University of Adelaide
+                    </h4>
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold w-fit border-violet-400 text-violet-400"
+                  >
+                    2024
+                  </div>
+                </div>
+                <p class="leading-relaxed text-gray-400">
+                  Led a self-proposed research project optimising machine
+                  learning performance and data processing efficiency.
+                </p>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-violet-400/30"
+              style="overflow-wrap: break-word"
+            >
+              <div class="p-6">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-white">
+                      Bachelor of Computer Science
+                    </h3>
+                    <h4 class="text-lg font-semibold mt-1 text-violet-400">
+                      The University of Adelaide
+                    </h4>
+                  </div>
+                  <div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold w-fit border-violet-400 text-violet-400"
+                  >
+                    2022 – 2023
+                  </div>
+                </div>
+                <p class="leading-relaxed text-gray-400">
+                  Gained expertise in algorithm design, software development,
+                  and system optimisation. Strengthened collaborative skills by
+                  leading diverse project teams in delivering scalable software
+                  solutions.
+                </p>
               </div>
             </div>
           </div>
@@ -1081,35 +1483,7 @@
                   class="rounded-lg border text-card-foreground shadow-sm transition-all duration-300 bg-white/5 backdrop-blur-lg border-white/10 hover:border-yellow-400/30"
                   data-entry-index="4"
                   style="overflow-wrap: break-word"
-                >
-                  <div class="p-4 sm:p-6" style="overflow-wrap: break-word">
-                    <div class="flex items-start mb-3 gap-3">
-                      <div class="flex-1 min-w-0">
-                        <h4 class="text-lg font-semibold mb-2 text-white">
-                          Gold Award
-                        </h4>
-                        <div
-                          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-                        >
-                          <p class="font-medium text-sm text-yellow-400">
-                            Cisco Networking Academy, Hong Kong &amp; Macau
-                          </p>
-                          <div
-                            class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 w-fit border-yellow-400 text-yellow-400"
-                          >
-                            2019
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="text-sm leading-relaxed text-gray-400">
-                      Gained first hand insight in network architecture and
-                      cybersecurity principles. Implemented secure networking
-                      solutions, showcasing expertise in cybersecurity
-                      principles and reducing security vulnerabilities by 50%.
-                    </p>
-                  </div>
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -1121,16 +1495,17 @@
       >
         <div class="container mx-auto max-w-6xl">
           <div class="text-center">
-            <h3
+            <h2
               class="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-12 text-white"
             >
               Connect with me
-            </h3>
+            </h2>
             <div class="flex justify-center space-x-6 sm:space-x-8">
               <a
                 href="https://github.com/khksamuel"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1152,6 +1527,7 @@
                 href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1172,6 +1548,7 @@
                   <circle cx="4" cy="4" r="2"></circle></svg></a
               ><a
                 href="mailto:kwok.samuel.kh@gmail.com"
+                aria-label="Send email"
                 class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-white/5 border-white/10 hover:border-blue-400/50"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1211,15 +1588,11 @@
           document.getElementById("mobile-menu").classList.toggle("hidden");
         });
 
-      // "View My Work" button scroll
-      document.querySelectorAll("button").forEach(function (btn) {
-        if (btn.textContent.trim() === "View My Work") {
-          btn.addEventListener("click", function () {
-            document
-              .getElementById("projects")
-              .scrollIntoView({ behavior: "smooth" });
-          });
-        }
+      // Close mobile menu when a nav link is clicked
+      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
       });
 
       // Smooth scroll for all anchor links (skip bare # placeholders)
@@ -1272,26 +1645,82 @@
         setTimeout(tick, 600);
       })();
 
-      // Active nav link highlight on scroll
-      const sections = document.querySelectorAll("section[id]");
+      // Active nav link highlight using IntersectionObserver (replaces scroll listener)
       const navLinks = document.querySelectorAll('nav a[href^="#"]');
-      window.addEventListener("scroll", function () {
-        let current = "";
-        sections.forEach(function (section) {
-          if (window.scrollY >= section.offsetTop - 80) {
-            current = section.getAttribute("id");
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach(function (link) {
+                const isActive = link.getAttribute("href") === "#" + id;
+                link.classList.toggle("text-white", isActive);
+                link.classList.toggle("text-gray-400", !isActive);
+              });
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px" },
+      );
+      document.querySelectorAll("section[id]").forEach(function (section) {
+        observer.observe(section);
+      });
+
+      // About 2 — live scrolling source code preview
+      (function () {
+        var pre = document.getElementById("about2-code");
+        var viewport = document.getElementById("about2-viewport");
+        if (!pre || !viewport) return;
+
+        // Read the live source directly from the DOM (works on file:// and http://)
+        var source = document.documentElement.outerHTML;
+        pre.textContent = source;
+
+        var pos = 0;
+        var speed = 0.4; // px per frame
+        var running = false;
+
+        function step() {
+          if (!running) return;
+          pos += speed;
+          if (pos >= pre.scrollHeight - viewport.clientHeight) {
+            pos = 0; // seamless loop
           }
-        });
-        navLinks.forEach(function (link) {
-          link.classList.toggle(
-            "text-white",
-            link.getAttribute("href") === "#" + current,
-          );
-          link.classList.toggle(
-            "text-gray-400",
-            link.getAttribute("href") !== "#" + current,
-          );
-        });
+          viewport.scrollTop = pos;
+          requestAnimationFrame(step);
+        }
+
+        // Start only when the element is visible
+        var startObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting && !running) {
+                running = true;
+                requestAnimationFrame(step);
+              } else if (!entry.isIntersecting) {
+                running = false;
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        startObserver.observe(viewport);
+      })();
+
+      // About section scroll-reveal
+      const revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".about-reveal").forEach(function (el) {
+        revealObserver.observe(el);
       });
     </script>
   </body>
