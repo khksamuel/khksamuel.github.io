@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Ka Hei Samuel Kwok</title>
+    <meta
+      name="description"
+      content="Contact Ka Hei Samuel Kwok for software engineering, full-stack, cloud, and AI opportunities."
+    />
+    <link rel="canonical" href="https://khksamuel.github.io/contact.html" />
+    <link rel="icon" type="image/jpeg" href="profile.jpg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body,
+      input,
+      textarea,
+      button {
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen text-white"
+  >
+    <nav
+      class="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-lg border-b border-white/10"
+    >
+      <div
+        class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="text-xl font-bold tracking-wider text-white hover:text-blue-400"
+          >KHK</a
+        >
+        <a
+          href="index.html"
+          class="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-full px-5 border border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all"
+        >
+          Back to Portfolio
+        </a>
+      </div>
+    </nav>
+
+    <main class="px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div class="container mx-auto max-w-3xl">
+        <section
+          class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 sm:p-8"
+        >
+          <h1
+            class="text-3xl sm:text-4xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+          >
+            Contact Me
+          </h1>
+          <p class="text-gray-300 mb-7 leading-relaxed">
+            If you have a role, project, or collaboration in mind, send me a
+            message and I will get back to you soon.
+          </p>
+
+          <form
+            action="https://formspree.io/f/xbdekgda"
+            method="POST"
+            class="space-y-4"
+          >
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-200 mb-2"
+                >Name</label
+              >
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full rounded-lg border border-white/20 bg-black/30 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-200 mb-2"
+                >Email</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="w-full rounded-lg border border-white/20 bg-black/30 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div>
+              <label
+                for="subject"
+                class="block text-sm font-medium text-gray-200 mb-2"
+                >Subject</label
+              >
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                class="w-full rounded-lg border border-white/20 bg-black/30 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                placeholder="What is this about?"
+              />
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-200 mb-2"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="w-full rounded-lg border border-white/20 bg-black/30 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                placeholder="Tell me about your idea, role, or project..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 text-sm font-medium h-11 rounded-full px-8 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
+            >
+              Send Message
+            </button>
+          </form>
+        </section>
+
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <a
+            href="https://github.com/khksamuel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-black/30 border-white/10 hover:border-blue-400/50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github w-6 h-6 sm:w-7 sm:h-7 transition-colors text-gray-400 group-hover:text-blue-400"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            class="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border transition-all duration-300 hover:scale-110 bg-black/30 border-white/10 hover:border-blue-400/50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin w-6 h-6 sm:w-7 sm:h-7 transition-colors text-gray-400 group-hover:text-blue-400"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+
+        <p class="text-sm text-gray-500 mt-8 text-center">
+          Copyright 2026 Ka Hei Samuel Kwok
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
