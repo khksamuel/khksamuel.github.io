@@ -1,0 +1,21 @@
+@use "./constants.scss" as *;
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: $color-background;
+	background-image:
+		// blue hue on top left
+		radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.2), transparent 35%),
+		// purple hue on bottom right
+		radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.18), transparent 40%),
+		$background-gradient;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: $color-text;
+}

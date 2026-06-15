@@ -1,0 +1,30 @@
+@use "./constants.scss" as *;
+
+.card_list {
+    @media (min-width: 768px) {
+        width: min(100%, 48rem);
+        display: flex;
+        flex-direction: column;
+    }
+    @media (max-width: 768px) {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+  gap: 1rem;
+
+    &__title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    &__misc {
+      font-size: 0.875rem;
+      color: $color-text;
+    }
+
+    &__details {
+      font-size: 1rem;
+      color: $color-text;
+    }  
+}

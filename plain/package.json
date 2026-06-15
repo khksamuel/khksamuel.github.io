@@ -1,0 +1,9 @@
+{
+  "name": "bem-recap",
+  "version": "1.0.0",
+  "description": "BEM CSS recap project",
+  "scripts": {
+    "watch": "sass --watch ./sass:.",
+    "build": "sass ./sass:."
+  }
+}

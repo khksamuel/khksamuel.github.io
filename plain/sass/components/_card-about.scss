@@ -1,0 +1,103 @@
+@use "./constants.scss" as *;
+
+@mixin image-description-card($image-url, $image-direction) {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 2em;
+  backdrop-filter: blur(100px);
+  filter: brightness(1.2);
+  width: min(calc(100% - 1rem), 62rem);
+  margin-inline: auto;
+
+  .card--image {
+    background-image: url($image-url);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    /* Reduced brightness for images to match the overall site aesthetic. */
+    filter: brightness(0.8);
+    aspect-ratio: 16 / 10;
+    min-height: 10rem;
+    border-radius: 2em;
+    margin-bottom: 0;
+  }
+
+  .card--description {
+    .fancy-text {
+      background: linear-gradient(90deg, $color-primary, $color-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $color-text;
+  }
+
+  @if $image-direction == left {
+    @media (min-width: 768px) {
+      margin-right: 20%;
+      width: 70%;
+      flex-direction: row;
+      gap: 20px;
+
+      .card--image {
+        width: 40%;
+        aspect-ratio: auto;
+        height: 18em;
+      }
+
+      .card--description {
+        width: 60%;
+      }
+    }
+  } @else if $image-direction == right {
+    @media (min-width: 768px) {
+      margin-left: 20%;
+      width: 70%;
+      flex-direction: row;
+      gap: 20px;
+
+      .card--image {
+        width: 40%;
+        aspect-ratio: auto;
+        height: 18em;
+        order: 2;
+      }
+
+      .card--description {
+        width: 60%;
+        order: 1;
+      }
+    }
+  }
+}
+
+.card {
+  &--about {
+    width: 80%;
+    border-radius: 0;
+  }
+
+  &--robocup {
+    @include image-description-card(
+      "https://khksamuel.github.io/about-1.png",
+      right
+    );
+  }
+
+  &--code {
+    @include image-description-card(
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnlwODlwYzNkbGFsb3l3enBpb29hNTIyc2k4MDF4cGk3YmI0anh6NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26tn33aiTi1jkl6H6/200.gif",
+      left
+    );
+  }
+
+  &--teamwork {
+    @include image-description-card(
+      "https://khksamuel.github.io/about-3.png",
+      right
+    );
+  }
+}

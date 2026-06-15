@@ -1,0 +1,75 @@
+@use "./constants.scss" as *;
+
+.hero {
+  height: 100%;
+  width: auto;
+  margin-top: 3em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &--image {
+    border: 2px solid $color-text;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-image: url("https://avatars.githubusercontent.com/u/83699297?v=4");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--name {
+    font-size: 2.5em;
+    background: linear-gradient(90deg, $color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &--contact {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 2em;
+    color: $color-text;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 9999px;
+      border: 1px solid $color-text;
+      background-color: $color-background;
+      color: $color-text;
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        background-color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        border-color: $color-accent;
+        color: $color-accent;
+        background-color: $color-background;
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: color 0.3s ease;
+      }
+
+      @media (min-width: 640px) {
+        width: 4rem;
+        height: 4rem;
+
+        svg {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="./index.html" class="nav-link nav-link--active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+    <main>
+      <!-- hero section -->
+      <section class="hero">
+        <div class="hero--image"></div>
+        <p class="hero--name">Samuel</p>
+        <div class="hero--contact">
+          <a
+            href="https://github.com/khksamuel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <!-- about me section -->
+      <section class="section">
+        <h2 class="section-title" id="about">About Me</h2>
+
+        <div class="card card--about card--robocup">
+          <div class="card--image"></div>
+          <div class="card--description">
+            I build <span class="fancy-text">production software</span> that
+            solves real problems — from healthcare platforms to world-champion
+            robotics systems.
+          </div>
+        </div>
+
+        <div class="card card--about card--code">
+          <div class="card--image"></div>
+          <div class="card--description">
+            Skilled in
+            <span class="fancy-text">full-stack, cloud, and AI</span> — I bring
+            a strong analytical mindset to every layer of the stack, from API
+            design down to deployment pipelines.
+          </div>
+        </div>
+
+        <div class="card card--about card--teamwork">
+          <div class="card--image"></div>
+          <div class="card--description">
+            I collaborate across engineering, product, and operations teams to
+            deliver
+            <span class="fancy-text">scalable, user-focused outcomes</span> —
+            and I love roles that blend software fundamentals with applied AI.
+          </div>
+        </div>
+      </section>
+
+      <!-- projects section -->
+      <section class="section projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects__grid">
+          <article class="projects__card">
+            <h3 class="projects__title">Allied AU</h3>
+            <p class="projects__description">
+              I co-designed and implemented the web application of Allied AU
+              during a major upgrade. This healthcare platform connects
+              specialised practitioners with their patients ensuring they
+              receive the right care. My responsibilities included implementing
+              the front-end, backend, CMS and their services on AWS. I also
+              collaborated with my team to make and provide feedback on design
+              decisions.
+            </p>
+            <div class="projects__tags">
+              <span class="projects__tag">PHP</span>
+              <span class="projects__tag">Stripe</span>
+              <span class="projects__tag">Laravel</span>
+              <span class="projects__tag">RESTful API</span>
+              <span class="projects__tag">Vue.js</span>
+              <span class="projects__tag">AWS EC2</span>
+              <span class="projects__tag">AWS SES</span>
+              <span class="projects__tag">TypeScript</span>
+              <span class="projects__tag">JavaScript</span>
+              <span class="projects__tag">SCSS</span>
+              <span class="projects__tag">CI/CD</span>
+              <span class="projects__tag">MySQL</span>
+            </div>
+            <div class="projects__actions">
+              <a
+                href="https://www.alliedhealthau.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projects__btn"
+                >Demo</a
+              >
+            </div>
+          </article>
+
+          <article class="projects__card">
+            <h3 class="projects__title">Robocup@Home</h3>
+            <p class="projects__org"><strong>IRL Crossing</strong></p>
+            <p class="projects__description">
+              This project was completed during my software engineering
+              internship at IRL Crossing. It focused on developing a suite of
+              state-of-the-art systems for a robot designed to interact with and
+              assist humans. The experience provided valuable insight into the
+              integration of computer science and robotics, allowing us to
+              explore the potential of these combined fields. Through our team's
+              dedication and hard work, we ultimately achieved a world
+              championship title.
+            </p>
+            <div class="projects__tags">
+              <span class="projects__tag">HTML</span>
+              <span class="projects__tag">CSS</span>
+              <span class="projects__tag">JavaScript</span>
+              <span class="projects__tag">TypeScript</span>
+              <span class="projects__tag">C++</span>
+              <span class="projects__tag">Python</span>
+              <span class="projects__tag">Linux</span>
+              <span class="projects__tag">Robot Operating System</span>
+              <span class="projects__tag">Bash</span>
+              <span class="projects__tag">Petri Net Plans</span>
+              <span class="projects__tag">Pepper Robot</span>
+              <span class="projects__tag">SQLite</span>
+              <span class="projects__tag">SQL</span>
+            </div>
+            <div class="projects__actions">
+              <a
+                href="https://github.com/RoboBreizh-RoboCup-Home"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projects__btn projects__btn--primary"
+                >Code</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- technical skills section -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="techs__grid">
+          <div class="techs techs__frontend">
+            <div class="techs__title">Frontend</div>
+            <div class="techs__tags">
+              <span class="techs__tag">HTML</span>
+              <span class="techs__tag">CSS</span>
+              <span class="techs__tag">JavaScript</span>
+              <span class="techs__tag">TypeScript</span>
+              <span class="techs__tag">Vue.js</span>
+              <span class="techs__tag">React</span>
+            </div>
+          </div>
+          <div class="techs techs__backend">
+            <div class="techs__title">Backend</div>
+            <div class="techs__tags">
+              <span class="techs__tag">Laravel</span>
+              <span class="techs__tag">PHP</span>
+              <span class="techs__tag">Node.js</span>
+              <span class="techs__tag">RESTful API</span>
+            </div>
+          </div>
+          <div class="techs techs__cloud">
+            <div class="techs__title">Cloud &amp; DevOps</div>
+            <div class="techs__tags">
+              <span class="techs__tag">AWS EC2</span>
+              <span class="techs__tag">AWS SES</span>
+              <span class="techs__tag">AWS S3</span>
+              <span class="techs__tag">Docker</span>
+              <span class="techs__tag">CI/CD</span>
+              <span class="techs__tag">Git</span>
+            </div>
+          </div>
+          <div class="techs techs__languages">
+            <div class="techs__title">Languages</div>
+            <div class="techs__tags">
+              <span class="techs__tag">Python</span>
+              <span class="techs__tag">C++</span>
+              <span class="techs__tag">SQL</span>
+              <span class="techs__tag">Bash</span>
+            </div>
+          </div>
+          <div class="techs techs__databases">
+            <div class="techs__title">Databases</div>
+            <div class="techs__tags">
+              <span class="techs__tag">MySQL</span>
+              <span class="techs__tag">PostgreSQL</span>
+              <span class="techs__tag">MongoDB</span>
+              <span class="techs__tag">SQL Server</span>
+              <span class="techs__tag">SQLite</span>
+              <span class="techs__tag">NoSQL</span>
+            </div>
+          </div>
+          <div class="techs techs__tools">
+            <div class="techs__title">Tools &amp; Other</div>
+            <div class="techs__tags">
+              <span class="techs__tag">ROS</span>
+              <span class="techs__tag">Linux</span>
+              <span class="techs__tag">Agile/Scrum</span>
+              <span class="techs__tag">Unit Testing</span>
+              <span class="techs__tag">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- professional journey section -->
+      <section class="section">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+          <div class="timeline__item timeline__item--left">
+            <article class="timeline__card">
+              <h3 class="timeline__title">Junior Software Engineer</h3>
+              <p class="timeline__org">Allied AU</p>
+              <span class="timeline__date">2025 - Present</span>
+              <p class="timeline__description">
+                Optimised API usage by 80%, implementing caching and debouncing
+                techniques to improve system performance and cost effectiveness.
+                Maintained AWS production and development environments,
+                sustaining over 99% uptime. Developed bidirectional API
+                integration features to synchronise schedules between internal
+                systems and external scheduling platforms, ensuring accurate,
+                real-time data exchange.
+              </p>
+            </article>
+          </div>
+
+          <div class="timeline__item timeline__item--right">
+            <article class="timeline__card">
+              <h3 class="timeline__title">Programming Tutor</h3>
+              <p class="timeline__org">Self-employed</p>
+              <span class="timeline__date">2022 - Present</span>
+              <p class="timeline__description">
+                Tutored more than 10 university students on programming and
+                prepared lesson schedule. Conducted weekly assignments,
+                resulting in 50% grade improvement in half yearly exams.
+                Developed tailor-made learning modules for students accelerated
+                coding comprehension by breaking down complex concepts into
+                practical applications.
+              </p>
+            </article>
+          </div>
+
+          <div class="timeline__item timeline__item--left">
+            <article class="timeline__card">
+              <h3 class="timeline__title">UX Development Intern</h3>
+              <p class="timeline__org">Allied AU</p>
+              <span class="timeline__date">2025</span>
+              <p class="timeline__description">
+                Designed and deployed a SaaS service enabling secure external
+                client access to previously functionally limited systems,
+                improving user reach and system flexibility. Implemented UI/UX
+                enhancements and user flow optimisation for a national allied
+                health platform. Developed, debugged, and tested web features
+                using Vue.js, Laravel, MySQL, AWS SES. Partnered with an agile
+                hybrid team, including CEO, project manager, QA tester, and
+                senior developer.
+              </p>
+            </article>
+          </div>
+
+          <div class="timeline__item timeline__item--right">
+            <article class="timeline__card">
+              <h3 class="timeline__title">
+                Entrepreneurship & Innovation Intern
+              </h3>
+              <p class="timeline__org">Moreton Bay Regional Council</p>
+              <span class="timeline__date">2024</span>
+              <p class="timeline__description">
+                Designed and implemented a data-driven website to improve
+                accessibility and user engagement. Conducted analytical research
+                on web traffic patterns, identifying improvements for site
+                functionality.
+              </p>
+            </article>
+          </div>
+
+          <div class="timeline__item timeline__item--left">
+            <article class="timeline__card">
+              <h3 class="timeline__title">Software Engineering Intern</h3>
+              <p class="timeline__org">IRL Crossing</p>
+              <span class="timeline__date">2023</span>
+              <p class="timeline__description">
+                Developed web-based robot control solution enhanced human-robot
+                interaction efficiency by 25%, optimising performance under
+                strict hardware constraints. Collaborated with a high-calibre
+                engineering team to refine algorithms, resulted in releasing 15%
+                more CPU resources for other core tasks.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- education section -->
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">Master of Artificial Intelligence</div>
+          <div class="card_list__misc">University of Adelaide, 2025</div>
+          <div class="card_list__description">
+            Formulated and led a self-initiated research project creating a
+            framework for evaluating and developing AI curriculum for early
+            education, translating complex concepts into engaging, accessible
+            learning modules.
+          </div>
+        </div>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">
+            Bachelor of Computer Science (Honours)
+          </div>
+          <div class="card_list__misc">University of Adelaide, 2024</div>
+          <div class="card_list__description">
+            Led a self-proposed research project optimising machine learning
+            performance and data processing efficiency.
+          </div>
+        </div>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">Bachelor of Computer Science</div>
+          <div class="card_list__misc">University of Adelaide, 2022-2023</div>
+          <div class="card_list__description">
+            Gained expertise in algorithm design, software development, and
+            system optimisation. Strengthened collaborative skills by leading
+            diverse project teams in delivering scalable software solutions.
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications & Recognition section -->
+      <section class="section">
+        <h2 class="section-title">Publications & Recognition</h2>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">
+            ROBOCUP@HOME 2023 League Social Standard
+          </div>
+          <div class="card_list__misc">Université de Bordeaux, 2023</div>
+          <div class="card_list__description">
+            Engineered AI-driven robotics software boosted object recognition
+            accuracy by 35%, securing first place in an international
+            competition.
+          </div>
+        </div>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">Platform League 1st Place</div>
+          <div class="card_list__misc">Université de Bordeaux, 2023</div>
+          <div class="card_list__description">
+            Achieved first place in the Platform League category at RoboCup@Home
+            2023, competing against top international university teams with an
+            autonomous human-service robot in Bordeaux, France.
+          </div>
+        </div>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">Global IQ Connect Program</div>
+          <div class="card_list__misc">The University of Adelaide, 2022</div>
+          <div class="card_list__description">
+            Strengthened inter-cultural collaboration with global teamwork
+            challenges. Enhanced cross-cultural communication in a professional
+            setting.
+          </div>
+        </div>
+
+        <div class="card card--glass card_list">
+          <div class="card_list__title">
+            CISCO Networking Skills Competition
+          </div>
+          <div class="card_list__misc">
+            Cisco Networking Academy, Hong Kong & Macau, 2019
+          </div>
+          <div class="card_list__description">
+            Gained first hand insight in network architecture and cybersecurity
+            principles. Implemented secure networking solutions, showcasing
+            expertise in cybersecurity principles and reducing security
+            vulnerabilities by 50%.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Connect with me</h2>
+        <div class="hero--contact">
+          <a
+            href="https://github.com/khksamuel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ka-hei-samuel-kwok-21b4a117a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <footer class="footer">
+        <p>&copy; 2025 Samuel. All rights reserved.</p>
+        <p>Check out my <a href="../index.html">main page</a></p>
+      </footer>
+    </main>
+  </body>
+</html>

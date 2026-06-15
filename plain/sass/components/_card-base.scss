@@ -1,0 +1,24 @@
+@use "./constants.scss" as *;
+
+.card {
+  @include horizontal-center;
+  box-sizing: border-box;
+  border-radius: 2em;
+  padding: 1.5em;
+  margin: 0.5em auto;
+  color: $color-text;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &--glass {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.005);
+    transition: all 0.3s ease;
+  }
+}
